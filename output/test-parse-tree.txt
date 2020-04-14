@@ -1,0 +1,151 @@
+[
+    {
+        "state": "block"
+    },
+    {
+        "state": "block",
+        "node": {
+            "type": "functionDeclaration",
+            "name": "test",
+            "parameters": [
+                {
+                    "type": "identifier",
+                    "value": "a"
+                },
+                {
+                    "type": "identifier",
+                    "value": "b"
+                }
+            ],
+            "body": {
+                "type": "block",
+                "statements": [
+                    {
+                        "type": "assignmentStatement",
+                        "name": "c",
+                        "value": {
+                            "type": "completeExpression",
+                            "operator": {
+                                "type": "multiplicativeOperator",
+                                "value": "*"
+                            },
+                            "leftOperand": {
+                                "type": "identifier",
+                                "value": "a"
+                            },
+                            "rightOperand": {
+                                "type": "identifier",
+                                "value": "b"
+                            }
+                        },
+                        "declarationType": "let"
+                    },
+                    {
+                        "type": "assignmentStatement",
+                        "name": "d",
+                        "value": {
+                            "type": "completeExpression",
+                            "operator": {
+                                "type": "multiplicativeOperator",
+                                "value": "*"
+                            },
+                            "leftOperand": {
+                                "type": "identifier",
+                                "value": "b"
+                            },
+                            "rightOperand": {
+                                "type": "subexpression",
+                                "operator": {
+                                    "type": "additiveOperator",
+                                    "value": "+"
+                                },
+                                "leftOperand": {
+                                    "type": "identifier",
+                                    "value": "b"
+                                },
+                                "rightOperand": {
+                                    "type": "subexpression",
+                                    "operator": {
+                                        "type": "multiplicativeOperator",
+                                        "value": "*"
+                                    },
+                                    "leftOperand": {
+                                        "type": "subexpression",
+                                        "operator": {
+                                            "type": "additiveOperator",
+                                            "value": "-"
+                                        },
+                                        "leftOperand": {
+                                            "type": "identifier",
+                                            "value": "c"
+                                        },
+                                        "rightOperand": {
+                                            "type": "identifier",
+                                            "value": "a"
+                                        }
+                                    },
+                                    "rightOperand": {
+                                        "type": "subexpression",
+                                        "operator": {
+                                            "type": "additiveOperator",
+                                            "value": "+"
+                                        },
+                                        "leftOperand": {
+                                            "type": "identifier",
+                                            "value": "c"
+                                        },
+                                        "rightOperand": {
+                                            "type": "identifier",
+                                            "value": "b"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "declarationType": "let"
+                    },
+                    {
+                        "type": "returnStatement",
+                        "value": {
+                            "type": "completeExpression",
+                            "operator": {
+                                "type": "additiveOperator",
+                                "value": "+"
+                            },
+                            "leftOperand": {
+                                "type": "identifier",
+                                "value": "c"
+                            },
+                            "rightOperand": {
+                                "type": "identifier",
+                                "value": "d"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "state": "block",
+        "node": {
+            "type": "assignmentStatement",
+            "name": "a",
+            "value": {
+                "type": "completeExpression",
+                "functionName": "test",
+                "arguments": [
+                    {
+                        "type": "number",
+                        "vlaue": "1"
+                    },
+                    {
+                        "type": "number",
+                        "vlaue": "2"
+                    }
+                ]
+            },
+            "declarationType": "var"
+        }
+    }
+]

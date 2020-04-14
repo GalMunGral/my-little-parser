@@ -1,6 +1,7 @@
 const { Type, State, transitionTable } = require('./config');
-const fs = require('fs');
+
 const lexer = require('./lexer');
+
 const peek = (stack) => stack[stack.length - 1];
 
 const parser = (s) => {
@@ -225,18 +226,4 @@ const parser = (s) => {
   }
 }
 
-a = parser(`
-  let d = b * (b + c * (a + 4));
-`);
-
-
-// a = parser(`
-//     function test(a, b) {
-//         let c = a * a;
-//         let d = b * (b + c * (a + 4));
-//         return c + d;
-//     }
-//     var a = test(1, 2);
-// `);
-
-debugger;
+module.exports = parser;
