@@ -1,0 +1,59 @@
+[
+    {
+        "type": "NODE",
+        "tag": "html",
+        "attributes": [],
+        "children": [
+            {
+                "type": "NODE",
+                "tag": "body",
+                "attributes": [],
+                "children": [
+                    {
+                        "type": "NODE",
+                        "tag": "h1",
+                        "attributes": [],
+                        "children": [
+                            {
+                                "type": "TEXT",
+                                "content": "Hello World"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "NODE",
+                        "tag": "div",
+                        "attributes": [],
+                        "children": [
+                            {
+                                "type": "NODE",
+                                "tag": "img",
+                                "attributes": [
+                                    {
+                                        "name": "alt",
+                                        "value": "test"
+                                    },
+                                    {
+                                        "name": "src",
+                                        "value": "example.com/image.jpg"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "NODE",
+                        "tag": "script",
+                        "attributes": [
+                            {
+                                "name": "src",
+                                "value": "lib.js"
+                            }
+                        ],
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    }
+]

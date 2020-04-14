@@ -1,4 +1,4 @@
-const { Type } = require('./config');
+const { Type } = require('./js-spec');
 
 function* lexer(s) {
   s = s.trim();

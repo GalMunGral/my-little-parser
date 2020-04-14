@@ -1,6 +1,5 @@
-const { Type, State, transitionTable } = require('./config');
-
-const lexer = require('./lexer');
+const { Type, State, transitionTable } = require('./js-spec');
+const lexer = require('./js-lexer');
 
 const peek = (stack) => stack[stack.length - 1];
 
@@ -11,7 +10,6 @@ const parser = (s) => {
 
   while (true) {
 
-    // console.log(stack);
     console.log('TOP:', stack.length, peek(stack));
 
     switch (peek(stack).state) {
@@ -38,8 +36,7 @@ const parser = (s) => {
       default: {
         if (done) return stack;
         const state = transitionTable[peek(stack).state][nextToken.type];
-        console.log('INPUT:', nextToken.type);
-        console.log('NEW STATE:', state, '\n');    
+        console.log(`INPUT: ${nextToken.type}\n NEW STATE: ${state} \n`);
         stack.push({ state, node: nextToken });
         ({ value: nextToken , done } = l.next());
       }
