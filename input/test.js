@@ -1,6 +1,16 @@
-function test(a, b) {
-    let c = a * b;
-    let d = b * (b + (c - a) * (c + b));
-    return c + d;
+export function determinant(a, b, c) {
+  return b * b - 4 * a * c;
 }
-var a = test(1, 2);
+
+function solve(a, b, c) {
+  var det;
+  det = determinant(a, b, c);
+  if (det <= 0) {
+    __error__();
+    return 0;
+  } else {
+    return (-b + __sqrt__(det)) / (2 * a);
+  }
+}
+
+export { solve as solveQuadratic };

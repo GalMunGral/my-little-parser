@@ -1,125 +1,67 @@
 [
     {
-        "state": "block"
-    },
-    {
-        "state": "block",
-        "node": {
-            "type": "functionDeclaration",
-            "name": "test",
-            "parameters": [
+        "type": "ExportNamedDeclaration",
+        "declaration": {
+            "type": "FunctionDeclaration",
+            "id": {
+                "type": "Identifier",
+                "name": "determinant"
+            },
+            "params": [
                 {
-                    "type": "identifier",
-                    "value": "a"
+                    "type": "Identifier",
+                    "name": "a"
                 },
                 {
-                    "type": "identifier",
-                    "value": "b"
+                    "type": "Identifier",
+                    "name": "b"
+                },
+                {
+                    "type": "Identifier",
+                    "name": "c"
                 }
             ],
             "body": {
-                "type": "block",
-                "statements": [
+                "type": "BlockStatement",
+                "body": [
                     {
-                        "type": "assignmentStatement",
-                        "name": "c",
-                        "value": {
-                            "type": "completeExpression",
-                            "operator": {
-                                "type": "multiplicativeOperator",
-                                "value": "*"
-                            },
-                            "leftOperand": {
-                                "type": "identifier",
-                                "value": "a"
-                            },
-                            "rightOperand": {
-                                "type": "identifier",
-                                "value": "b"
-                            }
-                        },
-                        "declarationType": "let"
-                    },
-                    {
-                        "type": "assignmentStatement",
-                        "name": "d",
-                        "value": {
-                            "type": "completeExpression",
-                            "operator": {
-                                "type": "multiplicativeOperator",
-                                "value": "*"
-                            },
-                            "leftOperand": {
-                                "type": "identifier",
-                                "value": "b"
-                            },
-                            "rightOperand": {
-                                "type": "subexpression",
-                                "operator": {
-                                    "type": "additiveOperator",
-                                    "value": "+"
+                        "type": "ReturnStatement",
+                        "argument": {
+                            "type": "BinaryExpression",
+                            "operator": "-",
+                            "left": {
+                                "type": "BinaryExpression",
+                                "operator": "*",
+                                "left": {
+                                    "type": "Identifier",
+                                    "name": "b"
                                 },
-                                "leftOperand": {
-                                    "type": "identifier",
-                                    "value": "b"
-                                },
-                                "rightOperand": {
-                                    "type": "subexpression",
-                                    "operator": {
-                                        "type": "multiplicativeOperator",
-                                        "value": "*"
-                                    },
-                                    "leftOperand": {
-                                        "type": "subexpression",
-                                        "operator": {
-                                            "type": "additiveOperator",
-                                            "value": "-"
-                                        },
-                                        "leftOperand": {
-                                            "type": "identifier",
-                                            "value": "c"
-                                        },
-                                        "rightOperand": {
-                                            "type": "identifier",
-                                            "value": "a"
-                                        }
-                                    },
-                                    "rightOperand": {
-                                        "type": "subexpression",
-                                        "operator": {
-                                            "type": "additiveOperator",
-                                            "value": "+"
-                                        },
-                                        "leftOperand": {
-                                            "type": "identifier",
-                                            "value": "c"
-                                        },
-                                        "rightOperand": {
-                                            "type": "identifier",
-                                            "value": "b"
-                                        }
-                                    }
+                                "right": {
+                                    "type": "Identifier",
+                                    "name": "b"
                                 }
-                            }
-                        },
-                        "declarationType": "let"
-                    },
-                    {
-                        "type": "returnStatement",
-                        "value": {
-                            "type": "completeExpression",
-                            "operator": {
-                                "type": "additiveOperator",
-                                "value": "+"
                             },
-                            "leftOperand": {
-                                "type": "identifier",
-                                "value": "c"
+                            "right": {
+                                "type": "BinaryExpression",
+                                "operator": "*",
+                                "left": {
+                                    "type": "BinaryExpression",
+                                    "operator": "*",
+                                    "left": {
+                                        "type": "NumericLiteral",
+                                        "value": 4
+                                    },
+                                    "right": {
+                                        "type": "Identifier",
+                                        "name": "a"
+                                    }
+                                },
+                                "right": {
+                                    "type": "Identifier",
+                                    "name": "c"
+                                }
                             },
-                            "rightOperand": {
-                                "type": "identifier",
-                                "value": "d"
-                            }
+                            "complete": true
                         }
                     }
                 ]
@@ -127,25 +69,178 @@
         }
     },
     {
-        "state": "block",
-        "node": {
-            "type": "assignmentStatement",
-            "name": "a",
-            "value": {
-                "type": "completeExpression",
-                "functionName": "test",
-                "arguments": [
-                    {
-                        "type": "number",
-                        "vlaue": "1"
-                    },
-                    {
-                        "type": "number",
-                        "vlaue": "2"
-                    }
-                ]
+        "type": "FunctionDeclaration",
+        "id": {
+            "type": "Identifier",
+            "name": "solve"
+        },
+        "params": [
+            {
+                "type": "Identifier",
+                "name": "a"
             },
-            "declarationType": "var"
+            {
+                "type": "Identifier",
+                "name": "b"
+            },
+            {
+                "type": "Identifier",
+                "name": "c"
+            }
+        ],
+        "body": {
+            "type": "BlockStatement",
+            "body": [
+                {
+                    "type": "VariableDeclaration",
+                    "declarations": [
+                        {
+                            "type": "Declarator",
+                            "id": {
+                                "type": "Identifier",
+                                "name": "det"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "ExpressionStatement",
+                    "expression": {
+                        "type": "AssignmentExpression",
+                        "left": {
+                            "type": "Identifier",
+                            "name": "det"
+                        },
+                        "right": {
+                            "type": "CallExpression",
+                            "callee": {
+                                "type": "Identifier",
+                                "name": "determinant"
+                            },
+                            "arguments": [
+                                {
+                                    "type": "Identifier",
+                                    "name": "a"
+                                },
+                                {
+                                    "type": "Identifier",
+                                    "name": "b"
+                                },
+                                {
+                                    "type": "Identifier",
+                                    "name": "c"
+                                }
+                            ],
+                            "complete": true
+                        }
+                    }
+                },
+                {
+                    "type": "IfStatement",
+                    "test": {
+                        "type": "BinaryExpression",
+                        "operator": "<=",
+                        "left": {
+                            "type": "Identifier",
+                            "name": "det"
+                        },
+                        "right": {
+                            "type": "NumericLiteral",
+                            "value": 0
+                        }
+                    },
+                    "consequent": {
+                        "type": "BlockStatement",
+                        "body": [
+                            {
+                                "type": "ExpressionStatement",
+                                "expression": {
+                                    "type": "CallExpression",
+                                    "callee": {
+                                        "type": "Identifier",
+                                        "name": "__error__"
+                                    },
+                                    "arguments": []
+                                }
+                            },
+                            {
+                                "type": "ReturnStatement",
+                                "argument": {
+                                    "type": "NumericLiteral",
+                                    "value": 0,
+                                    "complete": true
+                                }
+                            }
+                        ]
+                    },
+                    "alternate": {
+                        "type": "BlockStatement",
+                        "body": [
+                            {
+                                "type": "ReturnStatement",
+                                "argument": {
+                                    "type": "BinaryExpression",
+                                    "operator": "/",
+                                    "left": {
+                                        "type": "BinaryExpression",
+                                        "operator": "+",
+                                        "left": {
+                                            "type": "UnaryExpression",
+                                            "operator": "-",
+                                            "argument": {
+                                                "type": "Identifier",
+                                                "name": "b"
+                                            }
+                                        },
+                                        "right": {
+                                            "type": "CallExpression",
+                                            "callee": {
+                                                "type": "Identifier",
+                                                "name": "__sqrt__"
+                                            },
+                                            "arguments": [
+                                                {
+                                                    "type": "Identifier",
+                                                    "name": "det"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "right": {
+                                        "type": "BinaryExpression",
+                                        "operator": "*",
+                                        "left": {
+                                            "type": "NumericLiteral",
+                                            "value": 2
+                                        },
+                                        "right": {
+                                            "type": "Identifier",
+                                            "name": "a"
+                                        }
+                                    },
+                                    "complete": true
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
         }
+    },
+    {
+        "type": "ExportNamedDeclaration",
+        "specifiers": [
+            {
+                "type": "ExportSpecifier",
+                "local": {
+                    "type": "Identifier",
+                    "name": "solve"
+                },
+                "exported": {
+                    "type": "Identifier",
+                    "name": "solveQuadratic"
+                }
+            }
+        ]
     }
 ]
